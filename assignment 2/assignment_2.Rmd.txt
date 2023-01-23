@@ -1,0 +1,79 @@
+---
+title: "R Assignment 2"
+output:
+  html_document:
+    df_print: paged
+---
+
+### Evaluate the function myMean
+
+1.  assigning value to to assignment2 variable. (assignment2 value is gives in the instructions.)
+
+    ```{r}
+    assignment2 <- c(16, 18, 14, 22, 27, 17, 19, 17, 17,22, 20, 22)
+    ```
+
+2.  Defining the function myMean. (This function code is also given in instructions)
+
+    ```{r}
+    myMean <- function(assignment2) {return(sum(assignment2)/length(assignment2))}
+    ```
+
+3.  Testing myMean by passing assignment2 as argument
+
+    ```{r}
+    myMean(assignment2)
+    ```
+
+4.  Testing myMean on custom data.
+
+    ```{r}
+    data <- c(1,2,3,4,5)
+    myMean(data)
+    ```
+
+### Understanding myMean
+
+1.  myMean code:
+
+    ```{r}
+    myMean <- function(assignment2) {
+      return(sum(assignment2)/length(assignment2))
+      }
+    ```
+
+2.  myMean takes "assignment2" as its argument, here assignment2 can be any datatype which is supported by the functions sum ans length as these two functions are only used on the argument.
+
+3.  "sum" retruns the sum of all the values present in the argument. sum arguments can be of type numeric. complex or logical vectors. [1]
+
+    ```{r}
+    help(sum) # This opens a help window containing the sum documentation
+
+    # demo
+    data_sum = sum(data);
+    data_sum
+    ```
+
+4.  "length" used to get or set the length of the vectors. length takes any R object as its argument whose length method has been defined.[2]
+
+    ```{r}
+    data
+    length(data) # prints length of data
+    length(data) <- 6 # changing the length of data to 6
+    data # printing data
+    ```
+
+5.  You can observe NA is added to fill the 6th element position in data as its new size is set to 6 by length. More info on length can be found in R help
+
+    ```{r}
+    help(length)
+    ```
+
+myMean returns the quotient of return value of sum and length functions.
+
+`return(sum(assignment2)/length(assignment2))`
+
+### References:
+
+1.  R documentation (section 2.2) - [link](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Vector-arithmetic)
+2.  R documentation (section 3.1 and 3.2) - [link](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#The-intrinsic-attributes-mode-and-length)
